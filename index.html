@@ -109,7 +109,10 @@
 
   <footer><div class="wrap">Internal directory for the Helixona team · to add or change a tile, edit <a href="https://github.com/crpozo/helixona-main/blob/main/systems.js">systems.js</a> · mockups contain sample data only</div></footer>
 
-  <script src="./systems.js"></script>
+  <script>
+    // Always fetch the latest list (bypasses browser and CDN caching of systems.js).
+    document.write('<script src="./systems.js?v=' + Date.now() + '"><\/script>');
+  </script>
   <script>
     const ICONS = {
       app: '<svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>',
