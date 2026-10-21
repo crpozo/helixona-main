@@ -1,6 +1,6 @@
-# Helixona systems portal — bot.helixona.com
+# Helixona Hub — bot.helixona.com
 
-A single page that lists every Helixona application, mockup and tool. Plain HTML, no build step.
+A single page that lists the Helixona systems running on AWS and the mockups. Plain HTML, no build step.
 
 ## Files
 
@@ -18,9 +18,10 @@ Open `systems.js` and add an entry inside the right group:
 ```js
 {
   name: "Name shown on the card",
+  icon: "bot",               // app | phone | bot | card | form | clinic | code | grid
   description: "One sentence about what it does.",
   url: "https://…",          // leave "" for a placeholder
-  status: "live",            // live | internal | soon | external
+  status: "live",            // live | internal | soon
   tags: ["ops"],             // optional
   links: [{ label: "Sub-page", url: "https://…" }],   // optional quick links
 }
