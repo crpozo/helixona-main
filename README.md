@@ -8,7 +8,6 @@ A single page that lists every Helixona application, mockup and tool. Plain HTML
 |---|---|
 | `index.html` | The page (layout, styles, search). Rarely needs changes. |
 | `systems.js` | **The list of systems.** Edit this to add, remove or reorder cards. |
-| `CNAME` | Tells GitHub Pages the custom domain (`bot.helixona.com`). |
 | `.github/workflows/deploy-pages.yml` | Copies the repository root to the `gh-pages` branch on every push to `main`; GitHub Pages serves that branch. |
 | `logo-on-dark.png`, `favicon.svg` | Brand assets. |
 
@@ -43,7 +42,7 @@ If the DNS is on Cloudflare, set the record to **DNS only** (grey cloud) so GitH
 
 **2. GitHub:** repository **Settings → Pages**:
 - Source: **Deploy from a branch**, branch `gh-pages`, folder `/ (root)`. GitHub sets this itself the first time the `gh-pages` branch exists.
-- Custom domain: `bot.helixona.com` → Save. GitHub checks the DNS record (can take a few minutes after the DNS change).
+- Custom domain: `bot.helixona.com` → Save. Then add `cname: bot.helixona.com` under `with:` in `.github/workflows/deploy-pages.yml` so the setting survives future deploys. GitHub checks the DNS record (can take a few minutes after the DNS change).
 - Tick **Enforce HTTPS** once the check passes.
 
 Until the DNS is in place the portal is reachable at https://crpozo.github.io/helixona-main/.
