@@ -42,7 +42,7 @@ Do this once, in two places.
 If the DNS is on Cloudflare, set the record to **DNS only** (grey cloud) so GitHub can issue the certificate.
 
 **2. GitHub:** repository **Settings → Pages**:
-- Source: **GitHub Actions**.
+- Source: **Deploy from a branch**, branch `gh-pages`, folder `/ (root)`. GitHub sets this itself the first time the `gh-pages` branch exists.
 - Custom domain: `bot.helixona.com` → Save. GitHub checks the DNS record (can take a few minutes after the DNS change).
 - Tick **Enforce HTTPS** once the check passes.
 
