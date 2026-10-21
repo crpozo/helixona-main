@@ -9,7 +9,7 @@ A single page that lists every Helixona application, mockup and tool. Plain HTML
 | `index.html` | The page (layout, styles, search). Rarely needs changes. |
 | `systems.js` | **The list of systems.** Edit this to add, remove or reorder cards. |
 | `CNAME` | Tells GitHub Pages the custom domain (`bot.helixona.com`). |
-| `.github/workflows/deploy-pages.yml` | Publishes the repository root to GitHub Pages on every push to `main`. |
+| `.github/workflows/deploy-pages.yml` | Copies the repository root to the `gh-pages` branch on every push to `main`; GitHub Pages serves that branch. |
 | `logo-on-dark.png`, `favicon.svg` | Brand assets. |
 
 ## Adding a system
