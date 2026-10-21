@@ -24,4 +24,5 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: .
           publish_branch: gh-pages
+          cname: bot.helixona.com
           exclude_assets: '.github,README.md'
