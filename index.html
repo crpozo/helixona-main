@@ -31,18 +31,18 @@
     .wrap { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 32px; }
 
     /* Top bar */
-    .bar { display: flex; align-items: center; justify-content: space-between; padding: 22px 0 0; }
+    .bar { display: flex; align-items: center; justify-content: space-between; padding: 16px 0 0; }
     .bar img { height: 26px; width: auto; display: block; opacity: 0.95; }
     .bar .domain { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); }
 
     /* Hero */
-    .hero { text-align: center; padding: 26px 0 18px; }
-    .hero h1 { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 500; font-size: 46px; line-height: 1; margin: 0; letter-spacing: 0.01em; }
+    .hero { text-align: center; padding: 18px 0 12px; }
+    .hero h1 { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 500; font-size: 42px; line-height: 1; margin: 0; letter-spacing: 0.01em; }
     .hero h1 em { font-style: italic; color: var(--gold-2); }
     .hero p { margin: 10px 0 0; color: var(--muted); font-size: 15px; }
 
     /* Controls */
-    .controls { display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap; padding: 6px 0 22px; }
+    .controls { display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap; padding: 4px 0 16px; }
     .chip { font: inherit; font-size: 12.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); background: transparent; border: 1px solid var(--line); border-radius: 999px; padding: 7px 14px; cursor: pointer; transition: all .15s; }
     .chip:hover { color: var(--text); border-color: var(--line-strong); }
     .chip.on { color: #111; background: var(--gold); border-color: var(--gold); }
@@ -54,10 +54,10 @@
     .search input:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px var(--gold-dim); }
 
     /* Grid */
-    main { flex: 1; min-height: 0; overflow: auto; padding-bottom: 16px; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 340px)); justify-content: center; gap: 18px; }
+    main { flex: 1; min-height: 0; overflow: auto; padding: 8px 0 16px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 340px)); justify-content: center; gap: 14px; }
     .tile {
-      position: relative; display: flex; flex-direction: column; gap: 10px; min-height: 220px; padding: 22px 22px 18px;
+      position: relative; display: flex; flex-direction: column; gap: 10px; min-height: 196px; padding: 18px 20px 16px;
       background: var(--surface); border: 1px solid var(--line); border-radius: 16px;
       transition: transform .18s ease, border-color .18s, background .18s, box-shadow .18s;
     }
@@ -75,7 +75,7 @@
     .tile h3 { margin: 6px 0 0; font-size: 19px; font-weight: 600; line-height: 1.2; }
     .tile h3 .main-link { position: static; }
     .tile p { margin: 0; font-size: 13.5px; line-height: 1.5; color: var(--muted); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
-    .tile .foot { margin-top: auto; display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+    .tile .foot { margin-top: auto; display: flex; align-items: center; justify-content: space-between; gap: 8px; padding-right: 34px; }
     .tile .host { font-size: 11.5px; color: var(--faint); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .tile .group { font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); opacity: 0.85; }
     .arrow { position: absolute; right: 16px; bottom: 14px; width: 26px; height: 26px; border-radius: 50%; background: var(--gold); color: #111; display: grid; place-items: center; opacity: 0; transform: translate(-4px, 4px); transition: all .18s; }
@@ -122,6 +122,8 @@
       form: '<svg viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg>',
       clinic: '<svg viewBox="0 0 24 24"><path d="M12 21s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.6-7 10-7 10z"/><path d="M9 11h2l1-2 1.5 4 1-2H16"/></svg>',
       code: '<svg viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg>',
+      globe: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>',
+      billing: '<svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M8 16V11M12 16V8M16 16v-3"/></svg>',
       grid: '<svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>',
     };
     const STATUS = { live: "Live", internal: "Internal", external: "External", soon: "Coming soon" };

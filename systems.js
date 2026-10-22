@@ -1,6 +1,6 @@
 // Edit this list to add, remove or reorder tiles. No build step: save and push to main.
 //
-// icon:   "app" | "phone" | "bot" | "card" | "form" | "clinic" | "code" | "grid"
+// icon:   "app" | "phone" | "bot" | "card" | "form" | "clinic" | "code" | "grid" | "globe" | "billing"
 // status: "live"     — public, ready to use
 //         "internal" — AWS service reachable by IP (may need the clinic network / VPN)
 //         "soon"     — placeholder, no link yet
@@ -18,7 +18,24 @@ window.HELIXONA_SYSTEMS = [
         tags: ["aws", "ops", "eCW connector"],
         links: [
           { label: "Checks", url: "http://54.189.175.233:5050/checks" },
+          { label: "Audit", url: "http://54.189.175.233:5050/audit" },
         ],
+      },
+      {
+        name: "Audit",
+        icon: "form",
+        description: "Audit trail of bot activity: who did what and when.",
+        url: "http://54.189.175.233:5050/audit",
+        status: "internal",
+        tags: ["aws", "ops", "eCW connector"],
+      },
+      {
+        name: "Billing dashboard",
+        icon: "billing",
+        description: "Billing overview: charges, payments and balances.",
+        url: "",   // TODO: add the billing dashboard address
+        status: "internal",
+        tags: ["aws", "finance"],
       },
       {
         name: "Checks",
@@ -27,6 +44,19 @@ window.HELIXONA_SYSTEMS = [
         url: "http://54.189.175.233:5050/checks",
         status: "internal",
         tags: ["aws", "ops", "eCW connector"],
+      },
+    ],
+  },
+  {
+    group: "Website",
+    items: [
+      {
+        name: "helixona.com",
+        icon: "globe",
+        description: "Helixona's public website.",
+        url: "https://helixona.com/",
+        status: "live",
+        tags: ["public", "website"],
       },
     ],
   },
