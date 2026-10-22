@@ -1,4 +1,4 @@
-# Helixona Hub — bot.helixona.com
+# Helixona Hub
 
 A single page that lists the Helixona systems running on AWS and the mockups. Plain HTML, no build step.
 
@@ -29,9 +29,9 @@ Open `systems.js` and add an entry inside the right group:
 
 Save, commit, push to `main`. The site updates in about a minute.
 
-## Pointing bot.helixona.com at this site
+## Pointing bot.helixona.com at this site (on hold)
 
-Do this once, in two places.
+Do this once, in two places. The DNS for helixona.com is managed in GoDaddy (nameservers ns71/ns72.domaincontrol.com), not in cPanel.
 
 **1. DNS (where helixona.com is managed, e.g. GoDaddy, Cloudflare, Squarespace):**
 
@@ -46,7 +46,7 @@ If the DNS is on Cloudflare, set the record to **DNS only** (grey cloud) so GitH
 - Custom domain: `bot.helixona.com` → Save. Then add `cname: bot.helixona.com` under `with:` in `.github/workflows/deploy-pages.yml` so the setting survives future deploys. GitHub checks the DNS record (can take a few minutes after the DNS change).
 - Tick **Enforce HTTPS** once the check passes.
 
-Until the DNS is in place the portal is reachable at https://crpozo.github.io/helixona-main/.
+The hub is live at **https://crpozo.github.io/helixona-main/**. The custom domain is on hold until someone with access to the GoDaddy account for helixona.com can add the record below.
 
 ## Local preview
 
