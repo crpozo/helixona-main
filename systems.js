@@ -12,7 +12,7 @@ window.HELIXONA_SYSTEMS = [
       {
         name: "Bot administration",
         icon: "bot",
-        description: "Manage the eCW connector bots: jobs, runs and results.",
+        description: "Control panel for the eClinicalWorks connector bots: queue jobs, watch each run, review results and handle exceptions.",
         url: "http://54.189.175.233:5050/",
         status: "internal",
         tags: ["aws", "ops", "eCW connector"],
@@ -24,7 +24,7 @@ window.HELIXONA_SYSTEMS = [
       {
         name: "Audit",
         icon: "form",
-        description: "Audit trail of bot activity: who did what and when.",
+        description: "Complete audit trail of every bot action in eClinicalWorks: what was written, when, by which job, and what was verified.",
         url: "http://54.189.175.233:5050/audit",
         status: "internal",
         tags: ["aws", "ops", "eCW connector"],
@@ -32,7 +32,7 @@ window.HELIXONA_SYSTEMS = [
       {
         name: "Billing dashboard",
         icon: "billing",
-        description: "Claim-level finances from the eCW financial analysis report: by period, payer, provider and service.",
+        description: "Claim-level revenue, payments and aging from eClinicalWorks, by period, payer, provider and service.",
         url: "https://crpozo.github.io/helixona-billing-dashboard/",
         status: "live",
         tags: ["finance", "eCW", "dashboard"],
@@ -43,7 +43,7 @@ window.HELIXONA_SYSTEMS = [
       {
         name: "Checks",
         icon: "grid",
-        description: "Verification checks run by the bots, with their latest results.",
+        description: "Health checks for the connector: eCW access, read-back of notes and appointments, and the latest result of each.",
         url: "http://54.189.175.233:5050/checks",
         status: "internal",
         tags: ["aws", "ops", "eCW connector"],
@@ -56,7 +56,7 @@ window.HELIXONA_SYSTEMS = [
       {
         name: "Helixona AI",
         icon: "spark",
-        description: "Helixona's AI assistant.",
+        description: "Private AI assistant built on Claude, HIPAA compliant, for clinical and operational questions, drafting and summaries.",
         url: "https://ai.helixona.com/",
         status: "live",
         tags: ["ai", "assistant"],
@@ -69,7 +69,7 @@ window.HELIXONA_SYSTEMS = [
       {
         name: "helixona.com",
         icon: "globe",
-        description: "Helixona's public website.",
+        description: "The public website for patients and inquiries: services, the Complex Chronic program and contact.",
         url: "https://helixona.com/",
         status: "live",
         tags: ["public", "website"],
@@ -82,7 +82,7 @@ window.HELIXONA_SYSTEMS = [
       {
         name: "Complex Chronic Program",
         icon: "app",
-        description: "Clickable prototype of the nine-month program app: intake, surveys & alerts, registry, booking, payments. Sample data only.",
+        description: "Clickable prototype of the nine-month program app: intake, surveys, registry, booking and payments. Sample data only.",
         url: "https://crpozo.github.io/Helixona-Complex-Chronic-Program/",
         status: "live",
         tags: ["patient", "staff", "mockup"],
