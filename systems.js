@@ -32,10 +32,13 @@ window.HELIXONA_SYSTEMS = [
       {
         name: "Billing dashboard",
         icon: "billing",
-        description: "Billing overview: charges, payments and balances.",
-        url: "",   // TODO: add the billing dashboard address
-        status: "internal",
-        tags: ["aws", "finance"],
+        description: "Claim-level finances from the eCW financial analysis report: by period, payer, provider and service.",
+        url: "https://crpozo.github.io/helixona-billing-dashboard/",
+        status: "live",
+        tags: ["finance", "eCW", "dashboard"],
+        links: [
+          { label: "Source", url: "https://github.com/crpozo/helixona-billing-dashboard" },
+        ],
       },
       {
         name: "Checks",
