@@ -1,6 +1,6 @@
 // Edit this list to add, remove or reorder tiles. No build step: save and push to main.
 //
-// icon:   "app" | "phone" | "bot" | "card" | "form" | "clinic" | "code" | "grid" | "globe" | "billing"
+// icon:   "app" | "phone" | "bot" | "card" | "form" | "clinic" | "code" | "grid" | "globe" | "billing" | "spark"
 // status: "live"     — public, ready to use
 //         "internal" — AWS service reachable by IP (may need the clinic network / VPN)
 //         "soon"     — placeholder, no link yet
@@ -47,6 +47,19 @@ window.HELIXONA_SYSTEMS = [
         url: "http://54.189.175.233:5050/checks",
         status: "internal",
         tags: ["aws", "ops", "eCW connector"],
+      },
+    ],
+  },
+  {
+    group: "AI",
+    items: [
+      {
+        name: "Helixona AI",
+        icon: "spark",
+        description: "Helixona's AI assistant.",
+        url: "https://ai.helixona.com/",
+        status: "live",
+        tags: ["ai", "assistant"],
       },
     ],
   },
