@@ -8,7 +8,6 @@ A single page that lists the Helixona systems running on AWS and the mockups. Pl
 |---|---|
 | `index.html` | The page (layout, styles, search). Rarely needs changes. |
 | `systems.js` | **The list of systems.** Edit this to add, remove or reorder cards. |
-| `.github/workflows/deploy-pages.yml` | Copies the repository root to the `gh-pages` branch on every push to `main`; GitHub Pages serves that branch. |
 | `logo-on-dark.png`, `favicon.svg` | Brand assets. |
 
 ## Adding a system
@@ -27,7 +26,7 @@ Open `systems.js` and add an entry inside the right group:
 }
 ```
 
-Save, commit, push to `main`. The site updates in about a minute.
+Save, commit, push to `main`. GitHub Pages publishes the `main` branch directly (Settings → Pages → Deploy from a branch, `main`, root). The site updates in about a minute.
 
 ## Pointing bot.helixona.com at this site (on hold)
 
