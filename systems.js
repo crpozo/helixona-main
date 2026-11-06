@@ -80,6 +80,14 @@ window.HELIXONA_SYSTEMS = [
     group: "Mockups",
     items: [
       {
+        name: "Helixona EMR",
+        icon: "clinic",
+        description: "Wireframe of the Helixona EMR (HCOS): sign in and walk through the clinical screens. Sample data only.",
+        url: "https://crpozo.github.io/helixona-emr/login.html#/auth-01-signin",
+        status: "live",
+        tags: ["emr", "clinical", "wireframe"],
+      },
+      {
         name: "Complex Chronic Program",
         icon: "app",
         description: "Clickable prototype of the nine-month program app: intake, surveys, registry, booking and payments. Sample data only.",
