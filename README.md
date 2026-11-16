@@ -8,6 +8,8 @@ A single page that lists the Helixona systems running on AWS and the mockups. Pl
 |---|---|
 | `index.html` | The page (layout, styles, search). Rarely needs changes. |
 | `systems.js` | **The list of systems.** Edit this to add, remove or reorder cards. |
+| `tracker.html` | The project tracker page (weekly status view). Rarely needs changes. |
+| `projects.js` | **The list of projects** shown in the tracker. Edit this each week: status, next steps, responsible, waiting on, outstanding items. |
 | `logo-on-dark.png`, `favicon.svg` | Brand assets. |
 
 ## Adding a system

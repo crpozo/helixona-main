@@ -1,11 +1,24 @@
 // Edit this list to add, remove or reorder tiles. No build step: save and push to main.
 //
-// icon:   "app" | "phone" | "bot" | "card" | "form" | "clinic" | "code" | "grid" | "globe" | "billing" | "spark"
+// icon:   "app" | "phone" | "bot" | "card" | "form" | "clinic" | "code" | "grid" | "globe" | "billing" | "spark" | "list"
 // status: "live"     — public, ready to use
 //         "internal" — AWS service reachable by IP (may need the clinic network / VPN)
 //         "soon"     — placeholder, no link yet
 // links:  optional quick links shown inside the tile
 window.HELIXONA_SYSTEMS = [
+  {
+    group: "Projects",
+    items: [
+      {
+        name: "Project tracker",
+        icon: "list",
+        description: "Weekly status of every Helixona project: next steps, who is responsible, what each one is waiting on and outstanding items.",
+        url: "https://platforms.helixona.com/tracker.html",
+        status: "live",
+        tags: ["projects", "status", "weekly report", "management"],
+      },
+    ],
+  },
   {
     group: "Systems",
     items: [
