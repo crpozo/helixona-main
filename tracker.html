@@ -75,6 +75,58 @@
     .status.not-started { --dot: var(--not-started); } .status.done { --dot: var(--done); } .status.tbd { --dot: var(--tbd); color: var(--muted); }
     .empty { text-align: center; color: var(--muted); padding: 40px 0; margin: 0; }
 
+
+    .view { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; padding: 2px; margin-left: 10px; }
+    .view button { font: inherit; font-size: 12.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); background: transparent; border: 0; border-radius: 999px; padding: 5px 13px; cursor: pointer; }
+    .view button.on { background: var(--surface-hover); color: var(--text); box-shadow: inset 0 0 0 1px var(--line-strong); }
+    .btn { font: inherit; font-size: 12.5px; letter-spacing: 0.08em; text-transform: uppercase; color: #111; background: var(--gold); border: 1px solid var(--gold); border-radius: 999px; padding: 7px 16px; cursor: pointer; }
+    .btn:hover { background: var(--gold-2); }
+    .btn.ghost { color: var(--muted); background: transparent; border-color: var(--line); }
+    .btn.ghost:hover { color: var(--text); border-color: var(--line-strong); }
+    .btn.danger { color: var(--blocked); background: transparent; border-color: color-mix(in srgb, var(--blocked) 45%, transparent); }
+    .btn:disabled { opacity: 0.5; cursor: default; }
+    .edit-only { display: none; }
+    body.can-edit .edit-only { display: inline-block; }
+    .proj .edit { margin-top: 8px; font: inherit; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-2); background: transparent; border: 1px solid rgba(212,183,122,0.35); border-radius: 999px; padding: 3px 10px; cursor: pointer; }
+    .proj .edit:hover { border-color: var(--gold-2); }
+    .due { display: block; margin-top: 6px; font-size: 12px; color: var(--muted); }
+
+    /* Board */
+    .board { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(190px, 1fr); gap: 12px; overflow-x: auto; padding-bottom: 6px; align-items: start; }
+    .col { border: 1px solid var(--line); border-radius: 16px; background: var(--surface); padding: 12px; min-height: 140px; transition: border-color .15s; }
+    .col.over { border-color: var(--gold); }
+    .col > header { display: flex; align-items: center; justify-content: space-between; padding: 2px 4px 10px; }
+    .col > header .n { font-size: 12px; color: var(--faint); }
+    .card { display: block; width: 100%; text-align: left; font: inherit; color: inherit; background: rgba(255,255,255,0.04); border: 1px solid var(--line); border-radius: 12px; padding: 12px 13px; margin-bottom: 8px; font-size: 13px; line-height: 1.45; }
+    .card:last-child { margin-bottom: 0; }
+    body.can-edit .card { cursor: grab; }
+    body.can-edit .card:hover { border-color: var(--gold); }
+    .card h4 { margin: 0 0 4px; font-size: 14.5px; font-weight: 600; line-height: 1.25; }
+    .card .meta { color: var(--muted); font-size: 12px; }
+    .card .next { margin: 6px 0 0; color: var(--text); }
+    .card .wait { margin: 6px 0 0; color: var(--waiting); font-size: 12px; }
+
+    /* Dialogs */
+    dialog { width: min(640px, calc(100vw - 32px)); max-height: calc(100vh - 32px); overflow: auto; color: var(--text); background: #12110f; border: 1px solid var(--line-strong); border-radius: 16px; padding: 22px 24px; font: inherit; }
+    dialog::backdrop { background: rgba(0,0,0,0.65); }
+    dialog h2 { margin: 0 0 14px; font-family: "Cormorant Garamond", Georgia, serif; font-weight: 500; font-size: 28px; }
+    dialog p { margin: 0 0 12px; color: var(--muted); font-size: 13.5px; line-height: 1.5; }
+    dialog p a { color: var(--gold-2); border-bottom: 1px solid rgba(212,183,122,0.35); }
+    dialog code { color: var(--text); font-size: 12.5px; }
+    .fields { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 14px; }
+    .fields label { display: block; font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); }
+    .fields .wide { grid-column: 1 / -1; }
+    .fields small { text-transform: none; letter-spacing: 0; color: var(--faint); font-size: 11.5px; }
+    .fields input, .fields select, .fields textarea { display: block; width: 100%; margin-top: 5px; font: inherit; font-size: 14px; letter-spacing: 0; text-transform: none; color: var(--text); background: rgba(255,255,255,0.05); border: 1px solid var(--line); border-radius: 10px; padding: 8px 10px; color-scheme: dark; }
+    .fields textarea { min-height: 76px; resize: vertical; line-height: 1.45; }
+    .fields input:focus, .fields select:focus, .fields textarea:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px var(--gold-dim); }
+    .actions { display: flex; align-items: center; gap: 10px; margin-top: 18px; }
+    .actions .spacer { flex: 1; }
+    .err { color: var(--blocked); font-size: 13px; margin: 12px 0 0; min-height: 0; }
+    .toast { position: fixed; left: 50%; bottom: 22px; transform: translateX(-50%); background: #1b1915; border: 1px solid var(--gold); color: var(--text); font-size: 13px; padding: 9px 16px; border-radius: 999px; opacity: 0; pointer-events: none; transition: opacity .2s; z-index: 5; }
+    .toast.show { opacity: 1; }
+    footer button { font: inherit; color: var(--muted); background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; }
+
     footer { flex: none; text-align: center; color: var(--faint); font-size: 11.5px; padding: 10px 0 16px; border-top: 1px solid var(--line); }
     footer a { color: var(--muted); }
 
@@ -89,10 +141,11 @@
     @media (max-width: 520px) {
       .proj { grid-template-columns: minmax(0, 1fr); }
       .search, .search input { width: 100%; } .search { margin: 6px 0 0; }
+      .fields { grid-template-columns: minmax(0, 1fr); }
     }
     @media print {
       body { background: #fff; color: #111; }
-      .controls, .bar .back { display: none; }
+      .controls, .bar .back, .proj .edit, footer button { display: none !important; }
       .table, .proj, .head { border-color: #ccc; background: none; }
       .head, .label, .proj li::marker { color: #555; }
       .status, .proj .summary, .date, .hero p, .none { color: #333; }
@@ -111,41 +164,92 @@
       <h1>Project <em>Tracker</em></h1>
       <p id="sub">Weekly status of every Helixona project.</p>
     </div>
-    <div class="controls" id="chips"></div>
+    <div class="controls">
+      <span id="chipset" style="display:contents"></span>
+      <label class="search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input id="q" type="search" placeholder="Search" autocomplete="off" /></label>
+      <span class="view"><button data-v="table">Table</button><button data-v="board">Board</button></span>
+      <button class="btn edit-only" id="add">+ New project</button>
+    </div>
   </header>
 
   <main class="wrap">
-    <div class="table">
+    <div class="table" id="table">
       <div class="head"><div>Project</div><div>Status</div><div>Next steps</div><div>Responsible</div><div>Waiting on</div><div>Outstanding items</div><div>Updated</div></div>
       <div id="rows"></div>
     </div>
+    <div class="board" id="board" hidden></div>
   </main>
 
-  <footer><div class="wrap">Updated weekly · to change a project, edit <a href="https://github.com/crpozo/helixona-main/blob/main/projects.js">projects.js</a></div></footer>
+  <footer><div class="wrap">Updated weekly · <span id="auth"></span></div></footer>
+
+  <dialog id="editor">
+    <form method="dialog" id="form">
+      <h2 id="formTitle">Project</h2>
+      <div class="fields">
+        <label class="wide">Project name<input name="name" required maxlength="120" /></label>
+        <label class="wide">Summary <small>one line, optional</small><input name="summary" maxlength="200" /></label>
+        <label>Status<select name="status"></select></label>
+        <label>Responsible<input name="owner" maxlength="80" /></label>
+        <label>Target date <small>optional</small><input name="due" type="date" /></label>
+        <label>Link <small>optional</small><input name="url" type="url" placeholder="https://…" /></label>
+        <label class="wide">Next steps <small>one per line</small><textarea name="nextSteps"></textarea></label>
+        <label class="wide">Waiting on <small>who or what, one per line</small><textarea name="waitingOn"></textarea></label>
+        <label class="wide">Outstanding items <small>one per line</small><textarea name="outstanding"></textarea></label>
+      </div>
+      <p class="err" id="formErr"></p>
+      <div class="actions">
+        <button type="button" class="btn danger" id="del">Delete</button>
+        <span class="spacer"></span>
+        <button type="button" class="btn ghost" id="cancel">Cancel</button>
+        <button type="submit" class="btn" id="save">Save</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="signin">
+    <form method="dialog" id="signinForm">
+      <h2>Sign in to edit</h2>
+      <p>Changes are saved to <code>projects.js</code> in the GitHub repository, so everyone sees them about a minute later. Editing needs a GitHub access token with write access to <code>crpozo/helixona-main</code>.</p>
+      <p>Create one at <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">GitHub → Fine-grained tokens</a>: repository access “Only select repositories” → <code>helixona-main</code>, permission “Contents: Read and write”. The token is kept only in this browser.</p>
+      <div class="fields"><label class="wide">Access token<input name="token" type="password" required autocomplete="off" placeholder="github_pat_…" /></label></div>
+      <p class="err" id="signinErr"></p>
+      <div class="actions"><span class="spacer"></span><button type="button" class="btn ghost" id="signinCancel">Cancel</button><button type="submit" class="btn">Sign in</button></div>
+    </form>
+  </dialog>
+
+  <div class="toast" id="toast"></div>
 
   <script>
     // Always fetch the latest list (bypasses browser and CDN caching of projects.js).
     document.write('<script src="./projects.js?v=' + Date.now() + '"><\/script>');
   </script>
   <script>
-    const STATUS = { "on-track": "On track", waiting: "Waiting", blocked: "Blocked", "not-started": "Not started", done: "Done", tbd: "To update" };
-    const data = window.HELIXONA_TRACKER || { projects: [] };
-    const all = data.projects || [];
-    const rows = document.getElementById("rows"), chips = document.getElementById("chips");
-    let active = "all", query = "";
+    const REPO = "crpozo/helixona-main", FILE = "projects.js", BRANCH = "main";
+    const API = `https://api.github.com/repos/${REPO}/contents/${FILE}`;
+    const STATUS = { "not-started": "Not started", "on-track": "On track", waiting: "Waiting", blocked: "Blocked", done: "Done", tbd: "To update" };
+    const $ = id => document.getElementById(id);
+    const store = { get: k => { try { return localStorage.getItem(k); } catch { return null; } }, set: (k, v) => { try { v == null ? localStorage.removeItem(k) : localStorage.setItem(k, v); } catch {} } };
+
+    let data = window.HELIXONA_TRACKER || { projects: [] };
+    data.projects = data.projects || [];
+    let token = store.get("hx-tracker-token"), sha = null;
+    let active = "all", query = "", view = store.get("hx-tracker-view") === "board" ? "board" : "table", editing = -1, busy = false;
 
     const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
     const fmt = d => { const t = new Date(d + "T12:00:00"); return isNaN(t) ? esc(d) : t.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }); };
+    const today = () => new Date().toLocaleDateString("en-CA");
+    const st = p => STATUS[p.status] ? p.status : "tbd";
     const list = (a, none) => (a && a.length) ? `<ul>${a.map(x => `<li>${esc(x)}</li>`).join("")}</ul>` : `<span class="none">${none}</span>`;
     const cell = (cls, label, html) => `<div class="${cls}"><span class="label">${label}</span>${html}</div>`;
+    const toast = msg => { const t = $("toast"); t.textContent = msg; t.classList.add("show"); clearTimeout(toast.t); toast.t = setTimeout(() => t.classList.remove("show"), 4000); };
 
-    function row(p) {
-      const st = STATUS[p.status] ? p.status : "tbd";
-      const pending = st === "tbd" ? "To be filled in" : "Nothing";
+    // ---- Rendering ----
+    function row(p, i) {
+      const s = st(p), pending = s === "tbd" ? "To be filled in" : "Nothing";
       const name = p.url ? `<a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.name)}</a>` : esc(p.name);
       return `<div class="proj">
-        <div class="c-name"><h3>${name}</h3>${p.summary ? `<p class="summary">${esc(p.summary)}</p>` : ""}</div>
-        ${cell("c-status", "Status", `<span class="status ${st}">${STATUS[st]}</span>`)}
+        <div class="c-name"><h3>${name}</h3>${p.summary ? `<p class="summary">${esc(p.summary)}</p>` : ""}<button class="edit edit-only" data-i="${i}">Edit</button></div>
+        ${cell("c-status", "Status", `<span class="status ${s}">${STATUS[s]}</span>${p.due ? `<span class="due">Target ${fmt(p.due)}</span>` : ""}`)}
         ${cell("c-next", "Next steps", list(p.nextSteps, "To be filled in"))}
         ${cell("c-owner", "Responsible", p.owner ? esc(p.owner) : `<span class="none">Unassigned</span>`)}
         ${cell("c-wait", "Waiting on", list(p.waitingOn, pending))}
@@ -154,22 +258,116 @@
       </div>`;
     }
 
-    function render() {
-      const q = query.trim().toLowerCase();
-      const items = all.filter(p => (active === "all" || (STATUS[p.status] ? p.status : "tbd") === active)
-        && (!q || [p.name, p.summary, p.owner, STATUS[p.status], ...(p.nextSteps || []), ...(p.waitingOn || []), ...(p.outstanding || [])].join(" ").toLowerCase().includes(q)));
-      rows.innerHTML = items.length ? items.map(row).join("") : `<p class="empty">No projects match.</p>`;
-      chips.querySelectorAll(".chip").forEach(b => b.classList.toggle("on", b.dataset.s === active));
+    function card(p, i) {
+      const wait = (p.waitingOn || []).length;
+      return `<button class="card" data-i="${i}" draggable="${!!token}">
+        <h4>${esc(p.name)}</h4>
+        <div class="meta">${esc(p.owner || "Unassigned")}${p.due ? ` · target ${fmt(p.due)}` : ""}</div>
+        ${(p.nextSteps || []).length ? `<p class="next">Next: ${esc(p.nextSteps[0])}${p.nextSteps.length > 1 ? ` <span class="meta">+${p.nextSteps.length - 1}</span>` : ""}</p>` : ""}
+        ${wait ? `<p class="wait">Waiting on: ${esc(p.waitingOn.join(", "))}</p>` : ""}
+      </button>`;
     }
 
-    if (data.updated) document.getElementById("sub").textContent = `Weekly status of every Helixona project · last reviewed ${fmt(data.updated)}`;
-    const count = s => all.filter(p => (STATUS[p.status] ? p.status : "tbd") === s).length;
-    chips.innerHTML = [["all", "All", all.length], ...Object.entries(STATUS).map(([s, l]) => [s, l, count(s)]).filter(c => c[2])]
-      .map(([s, l, n]) => `<button class="chip" data-s="${s}">${l}<span class="n">${n}</span></button>`).join("")
-      + `<label class="search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input id="q" type="search" placeholder="Search" autocomplete="off" /></label>`;
-    chips.addEventListener("click", e => { const b = e.target.closest(".chip"); if (b) { active = b.dataset.s; render(); } });
-    document.getElementById("q").addEventListener("input", e => { query = e.target.value; render(); });
+    function render() {
+      const q = query.trim().toLowerCase();
+      const items = data.projects.map((p, i) => [p, i]).filter(([p]) => (active === "all" || st(p) === active)
+        && (!q || [p.name, p.summary, p.owner, STATUS[st(p)], ...(p.nextSteps || []), ...(p.waitingOn || []), ...(p.outstanding || [])].join(" ").toLowerCase().includes(q)));
+      const count = s => data.projects.filter(p => st(p) === s).length;
+
+      $("sub").textContent = "Weekly status of every Helixona project" + (data.updated ? ` · last updated ${fmt(data.updated)}` : "");
+      $("chipset").innerHTML = [["all", "All", data.projects.length], ...Object.entries(STATUS).map(([s, l]) => [s, l, count(s)]).filter(c => c[2] || c[0] === active)]
+        .map(([s, l, n]) => `<button class="chip${s === active ? " on" : ""}" data-s="${s}">${l}<span class="n">${n}</span></button>`).join("");
+      document.querySelectorAll(".view button").forEach(b => b.classList.toggle("on", b.dataset.v === view));
+      document.body.classList.toggle("can-edit", !!token);
+      $("auth").innerHTML = token ? `editing enabled · <button id="signout">Sign out</button>` : `<button id="signinOpen">Sign in to edit</button>`;
+
+      $("table").hidden = view !== "table"; $("board").hidden = view !== "board";
+      if (view === "table") {
+        $("rows").innerHTML = items.length ? items.map(([p, i]) => row(p, i)).join("") : `<p class="empty">${data.projects.length ? "No projects match." : "No projects yet."}</p>`;
+      } else {
+        const cols = Object.keys(STATUS).filter(s => s !== "tbd" || count("tbd"));
+        $("board").innerHTML = cols.map(s => { const c = items.filter(([p]) => st(p) === s);
+          return `<section class="col" data-s="${s}"><header><span class="status ${s}">${STATUS[s]}</span><span class="n">${c.length}</span></header>${c.map(([p, i]) => card(p, i)).join("")}</section>`; }).join("");
+      }
+    }
+
+    // ---- Saving to GitHub ----
+    const b64 = s => { let o = ""; new TextEncoder().encode(s).forEach(b => o += String.fromCharCode(b)); return btoa(o); };
+    const unb64 = s => new TextDecoder().decode(Uint8Array.from(atob(s.replace(/\s/g, "")), c => c.charCodeAt(0)));
+    const serialize = d => `// Project tracker data for tracker.html. Edit it from the page (Sign in to edit) or by hand, then push to main.\n// status: "not-started" | "on-track" | "waiting" | "blocked" | "done" | "tbd"\n// nextSteps, waitingOn, outstanding: lists of short lines. due and updated: YYYY-MM-DD.\nwindow.HELIXONA_TRACKER = ${JSON.stringify(d, null, 2)};\n`;
+    const parse = text => { const w = {}; new Function("window", text)(w); return w.HELIXONA_TRACKER; };
+
+    async function gh(method, body) {
+      const r = await fetch(API + (method === "GET" ? `?ref=${BRANCH}` : ""), { method, cache: "no-store", headers: { Authorization: `Bearer ${token}`, Accept: "application/vnd.github+json" }, body: body ? JSON.stringify(body) : undefined });
+      if (!r.ok) { const e = new Error(
+        r.status === 401 ? "GitHub did not accept the token. Sign in again with a valid one." :
+        r.status === 403 || r.status === 404 ? "This token cannot write to the repository. It needs “Contents: Read and write” on helixona-main." :
+        r.status === 409 || r.status === 422 ? "Someone else saved changes in the meantime. Reload the page and try again." :
+        `GitHub returned an error (${r.status}). Try again.`); e.status = r.status; throw e; }
+      return r.json();
+    }
+    async function pull() { const j = await gh("GET"); sha = j.sha; const d = parse(unb64(j.content)); if (d) { data = d; data.projects = data.projects || []; } }
+    async function push(message) { const j = await gh("PUT", { message, content: b64(serialize(data)), sha, branch: BRANCH }); sha = j.content.sha; }
+
+    // Apply a change, save it, and undo it if the save fails.
+    async function commit(change, message) {
+      if (busy) return false;
+      const before = JSON.stringify(data); busy = true;
+      try { if (!sha) await pull(); change(); data.updated = today(); await push(message); render(); toast("Saved · visible to everyone in about a minute"); return true; }
+      catch (e) { data = JSON.parse(before); render(); throw e; }
+      finally { busy = false; }
+    }
+
+    // ---- Editor ----
+    const form = $("form"), f = form.elements, lines = v => v.split("\n").map(x => x.trim()).filter(Boolean);
+    f.status.innerHTML = Object.entries(STATUS).map(([s, l]) => `<option value="${s}">${l}</option>`).join("");
+    function openEditor(i) {
+      editing = i; const p = i < 0 ? { status: "not-started" } : data.projects[i];
+      $("formTitle").textContent = i < 0 ? "New project" : "Edit project"; $("del").hidden = i < 0; $("formErr").textContent = "";
+      for (const k of ["name", "summary", "owner", "due", "url"]) f[k].value = p[k] || "";
+      f.status.value = st(p);
+      for (const k of ["nextSteps", "waitingOn", "outstanding"]) f[k].value = (p[k] || []).join("\n");
+      $("editor").showModal();
+    }
+    async function run(fn, errEl, dlg) { $("save").disabled = $("del").disabled = true; try { if (await fn()) dlg.close(); } catch (e) { errEl.textContent = e.message; } finally { $("save").disabled = $("del").disabled = false; } }
+    form.addEventListener("submit", e => { e.preventDefault();
+      const p = { name: f.name.value.trim(), summary: f.summary.value.trim(), status: f.status.value, nextSteps: lines(f.nextSteps.value), owner: f.owner.value.trim(), waitingOn: lines(f.waitingOn.value), outstanding: lines(f.outstanding.value), due: f.due.value, updated: today(), url: f.url.value.trim() };
+      run(() => commit(() => { editing < 0 ? data.projects.push(p) : data.projects[editing] = p; }, `Tracker: ${editing < 0 ? "add" : "update"} ${p.name}`), $("formErr"), $("editor")); });
+    $("del").addEventListener("click", () => { const name = data.projects[editing].name;
+      if (confirm(`Delete “${name}” from the tracker?`)) run(() => commit(() => data.projects.splice(editing, 1), `Tracker: remove ${name}`), $("formErr"), $("editor")); });
+    $("cancel").addEventListener("click", () => $("editor").close());
+
+    // ---- Sign in ----
+    $("signinForm").addEventListener("submit", async e => { e.preventDefault(); const el = e.target.elements.token;
+      token = el.value.trim(); $("signinErr").textContent = "";
+      try { await pull(); store.set("hx-tracker-token", token); el.value = ""; $("signin").close(); render(); toast("Editing enabled"); }
+      catch (err) { token = null; $("signinErr").textContent = err.message; } });
+    $("signinCancel").addEventListener("click", () => $("signin").close());
+    $("auth").addEventListener("click", e => {
+      if (e.target.id === "signinOpen") $("signin").showModal();
+      if (e.target.id === "signout") { token = sha = null; store.set("hx-tracker-token", null); render(); } });
+
+    // ---- Controls ----
+    $("chipset").addEventListener("click", e => { const b = e.target.closest(".chip"); if (b) { active = b.dataset.s; render(); } });
+    $("q").addEventListener("input", e => { query = e.target.value; render(); });
+    document.querySelector(".view").addEventListener("click", e => { const b = e.target.closest("button"); if (b) { view = b.dataset.v; store.set("hx-tracker-view", view); render(); } });
+    $("add").addEventListener("click", () => openEditor(-1));
+    $("rows").addEventListener("click", e => { const b = e.target.closest(".edit"); if (b) openEditor(+b.dataset.i); });
+
+    // Board: click a card to edit it, drag it to another column to change its status.
+    const board = $("board");
+    board.addEventListener("click", e => { const c = e.target.closest(".card"); if (c && token) openEditor(+c.dataset.i); });
+    board.addEventListener("dragstart", e => { const c = e.target.closest(".card"); if (c) e.dataTransfer.setData("text/plain", c.dataset.i); });
+    board.addEventListener("dragover", e => { const c = e.target.closest(".col"); if (c && token) { e.preventDefault(); board.querySelectorAll(".col").forEach(x => x.classList.toggle("over", x === c)); } });
+    board.addEventListener("dragleave", e => { if (!board.contains(e.relatedTarget)) board.querySelectorAll(".col").forEach(x => x.classList.remove("over")); });
+    board.addEventListener("drop", e => { const c = e.target.closest(".col"), i = +e.dataTransfer.getData("text/plain"), p = data.projects[i];
+      e.preventDefault(); board.querySelectorAll(".col").forEach(x => x.classList.remove("over"));
+      if (!c || !p || st(p) === c.dataset.s) return;
+      commit(() => { p.status = c.dataset.s; p.updated = today(); }, `Tracker: ${p.name} → ${STATUS[c.dataset.s]}`).catch(err => toast(err.message)); });
+
     render();
+    // Editors read the latest saved copy straight from GitHub, so a reload right after saving never shows stale data.
+    if (token) pull().then(render).catch(e => { if (e.status === 401) { token = null; store.set("hx-tracker-token", null); render(); } });
   </script>
 </body>
 </html>
